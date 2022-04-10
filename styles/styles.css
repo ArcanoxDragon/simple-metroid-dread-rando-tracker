@@ -36,7 +36,7 @@ body {
   justify-content: center;
   box-sizing: border-box;
   gap: var(--item-gap);
-  max-width: calc((var(--items-per-row) - 1) * var(--item-gap) + var(--items-per-row) * var(--item-image-size));
+  max-width: calc(var(--items-per-row) * var(--item-gap) + var(--items-per-row) * var(--item-image-size));
 }
 
 .item {
