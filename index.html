@@ -1,195 +1,138 @@
 <!DOCTYPE html>
 <html>
-	<head>
-		<title>Metroid Dread Randomizer Tracker</title>
-		<link rel="stylesheet" href="styles/styles.css" />
-		<script type="text/javascript" src="scripts/functions.js"></script>
-	</head>
 
-	<body>
-		<div id="tracker">
-			<div class="row">
-        <div class="item">
-					<div id="chargebeam" class="items grayscale">
-						<img src="images/items/chargebeam.png" alt="Charge Beam" />
-					</div>
-				</div>
+<head>
+	<title>Metroid Dread Randomizer Tracker</title>
+	<link rel="stylesheet" href="styles/styles.css" />
+	<script type="text/javascript" src="scripts/functions.js"></script>
+</head>
 
-				<div class="item">
-					<div id="diffusionbeam" class="items grayscale">
-						<img src="images/items/diffusionbeam.png" alt="Diffusion Beam" />
-					</div>
-				</div>
+<body>
+	<div id="tracker">
+		<div id="chargebeam" class="item grayscale">
+			<img src="images/items/chargebeam.png" alt="Charge Beam" />
 
-				<div class="item">
-					<div id="widebeam" class="items grayscale">
-						<img src="images/items/widebeam.png" alt="Wide Beam" />
-					</div>
-				</div>
-
-				<div class="item">
-					<div id="plasmabeam" class="items grayscale">
-						<img src="images/items/plasmabeam.png" alt="Plasma Beam" />
-					</div>
-				</div>
-
-				<div class="item">
-					<div id="wavebeam" class="items grayscale">
-						<img src="images/items/wavebeam.png" alt="Wave Beam" />
-					</div>
-				</div>
-
-				<div class="item">
-					<div id="supermissile" class="items grayscale">
-						<img src="images/items/supermissile.png" alt="Super Missile" />
-					</div>
-				</div>
-
-				<div class="item">
-					<div id="icemissile" class="items grayscale">
-						<img src="images/items/icemissile.png" alt="Ice Missile" />
-					</div>
-				</div>
-
-				<div class="item">
-					<div id="stormmissile" class="items grayscale">
-						<img src="images/items/stormmissile.png" alt="Storm Missile" />
-					</div>
-				</div>
-      </div>
-
-      <div class="row">
-        <div class="item">
-          <div id="variasuit" class="items grayscale">
-            <img src="images/items/variasuit.png" alt="Varia Suit" />
-          </div>
-        </div>
-
-        <div class="item">
-          <div id="gravitysuit" class="items grayscale">
-            <img src="images/items/gravitysuit.png" alt="Gravity Suit" />
-          </div>
-        </div>
-
-        <div class="item">
-          <div id="spinboost" class="items grayscale">
-            <img src="images/items/spinboost.png" alt="Spin Boost" />
-          </div>
-        </div>
-
-        <div class="item">
-          <div id="spacejump" class="items grayscale">
-            <img src="images/items/spacejump.png" alt="Space Jump" />
-          </div>
-        </div>
-
-        <div class="item">
-          <div id="morphball" class="items grayscale">
-            <img src="images/items/morphball.png" alt="Morph Ball" />
-          </div>
-        </div>
-
-        <div class="item">
-          <div id="bomb" class="items grayscale">
-            <img src="images/items/bomb.png" alt="Bomb" />
-          </div>
-        </div>
-
-        <div class="item">
-          <div id="crossbomb" class="items grayscale">
-            <img src="images/items/crossbomb.png" alt="Cross Bomb" />
-          </div>
-        </div>
-
-				<div class="item">
-					<div id="powerbomb" class="items grayscale">
-						<img src="images/items/powerbomb.png" alt="Power Bomb" />
-					</div>
-				</div>
-      </div>
-
-      <div class="row">
-        <div class="item">
-          <div id="slide" class="items grayscale">
-            <img src="images/items/slide.png" alt="Slide" />
-          </div>
-        </div>
-
-				<div class="item">
-					<div id="spidermagnet" class="items grayscale">
-						<img src="images/items/spidermagnet.png" alt="Spider Magnet" />
-					</div>
-				</div>
-
-				<div class="item">
-					<div id="speedbooster" class="items grayscale">
-						<img src="images/items/speedbooster.png" alt="Speed Booster" />
-					</div>
-				</div>
-
-				<div class="item">
-					<div id="grapplebeam" class="items grayscale">
-						<img src="images/items/grapplebeam.png" alt="Grapple Beam" />
-					</div>
-				</div>
-
-				<div class="item">
-					<div id="screwattack" class="items grayscale">
-						<img src="images/items/screwattack.png" alt="Screw Attack" />
-					</div>
-				</div>
-
-				<div class="item">
-					<div id="phantomcloak" class="items grayscale">
-						<img src="images/items/phantomcloak.png" alt="Phantom Cloak" />
-					</div>
-				</div>
-
-				<div class="item">
-					<div id="flashshift" class="items grayscale">
-						<img src="images/items/flashshift.png" alt="Flash Shift" />
-					</div>
-				</div>
-
-				<div class="item">
-					<div id="pulseradar" class="items grayscale">
-						<img src="images/items/pulseradar.png" alt="Pulse Radar" />
-					</div>
-				</div>
-      </div>
 		</div>
 
-		<div id="misc">
-			<div class="row">
-				<div class="item auto">
-					<div id="go-mode" class="items grayscale">
-						<img src="images/items/ship.png" alt="Go Mode" />
-					</div>
-				</div>
-			</div>
+		<div id="diffusionbeam" class="item grayscale">
+			<img src="images/items/diffusionbeam.png" alt="Diffusion Beam" />
 		</div>
 
-		<script type="text/javascript">
-			var params = new URLSearchParams(window.location.search);
-			var startingitems = (params.get('startingitems') || '').split(',');
+		<div id="widebeam" class="item grayscale">
+			<img src="images/items/widebeam.png" alt="Wide Beam" />
+		</div>
 
-			for (var i = 0; i < startingitems.length; i += 1) {
-        if (startingitems[i]) {
-  				var startingItem = document.querySelector('#' + startingitems[i]);
+		<div id="plasmabeam" class="item grayscale">
+			<img src="images/items/plasmabeam.png" alt="Plasma Beam" />
+		</div>
 
-  				if (startingItem) {
-  					startingItem.classList.remove('grayscale');
-  					startingItem.classList.add('locked');
-  				}
-  			}
-      }
+		<div id="wavebeam" class="item grayscale">
+			<img src="images/items/wavebeam.png" alt="Wave Beam" />
+		</div>
 
-			document.addEventListener('wheel', function (e) { e.preventDefault(); });
+		<div id="supermissile" class="item grayscale">
+			<img src="images/items/supermissile.png" alt="Super Missile" />
+		</div>
 
-			document.querySelectorAll('.item:not(.auto)').forEach(function (item) {
-				item.addEventListener('contextmenu', function (e) { e.preventDefault(); });
-				item.addEventListener('mousedown', function (e) { toggleItem(e); });
-			});
-		</script>
-	</body>
+		<div id="icemissile" class="item grayscale">
+			<img src="images/items/icemissile.png" alt="Ice Missile" />
+		</div>
+
+		<div id="stormmissile" class="item grayscale">
+			<img src="images/items/stormmissile.png" alt="Storm Missile" />
+		</div>
+
+		<div id="variasuit" class="item grayscale">
+			<img src="images/items/variasuit.png" alt="Varia Suit" />
+		</div>
+
+		<div id="gravitysuit" class="item grayscale">
+			<img src="images/items/gravitysuit.png" alt="Gravity Suit" />
+		</div>
+
+		<div id="spinboost" class="item grayscale">
+			<img src="images/items/spinboost.png" alt="Spin Boost" />
+		</div>
+
+		<div id="spacejump" class="item grayscale">
+			<img src="images/items/spacejump.png" alt="Space Jump" />
+		</div>
+
+		<div id="morphball" class="item grayscale">
+			<img src="images/items/morphball.png" alt="Morph Ball" />
+		</div>
+
+		<div id="bomb" class="item grayscale">
+			<img src="images/items/bomb.png" alt="Bomb" />
+		</div>
+
+		<div id="crossbomb" class="item grayscale">
+			<img src="images/items/crossbomb.png" alt="Cross Bomb" />
+		</div>
+
+		<div id="powerbomb" class="item grayscale">
+			<img src="images/items/powerbomb.png" alt="Power Bomb" />
+		</div>
+
+		<div id="slide" class="item grayscale">
+			<img src="images/items/slide.png" alt="Slide" />
+		</div>
+
+		<div id="spidermagnet" class="item grayscale">
+			<img src="images/items/spidermagnet.png" alt="Spider Magnet" />
+		</div>
+
+		<div id="speedbooster" class="item grayscale">
+			<img src="images/items/speedbooster.png" alt="Speed Booster" />
+		</div>
+
+		<div id="grapplebeam" class="item grayscale">
+			<img src="images/items/grapplebeam.png" alt="Grapple Beam" />
+		</div>
+
+		<div id="screwattack" class="item grayscale">
+			<img src="images/items/screwattack.png" alt="Screw Attack" />
+		</div>
+
+		<div id="phantomcloak" class="item grayscale">
+			<img src="images/items/phantomcloak.png" alt="Phantom Cloak" />
+		</div>
+
+		<div id="flashshift" class="item grayscale">
+			<img src="images/items/flashshift.png" alt="Flash Shift" />
+		</div>
+
+		<div id="pulseradar" class="item grayscale">
+			<img src="images/items/pulseradar.png" alt="Pulse Radar" />
+		</div>
+		
+		<div id="go-mode" class="auto item grayscale">
+			<img src="images/items/ship.png" alt="Go Mode" />
+		</div>
+	</div>
+
+	<script type="text/javascript">
+		var params = new URLSearchParams(window.location.search);
+		var startingitems = (params.get('startingitems') || '').split(',');
+
+		for (var i = 0; i < startingitems.length; i += 1) {
+			if (startingitems[i]) {
+				var startingItem = document.querySelector('#' + startingitems[i]);
+
+				if (startingItem) {
+					startingItem.classList.remove('grayscale');
+					startingItem.classList.add('locked');
+				}
+			}
+		}
+
+		document.addEventListener('wheel', function (e) { e.preventDefault(); });
+
+		document.querySelectorAll('.item:not(.auto)').forEach(function (item) {
+			item.addEventListener('contextmenu', function (e) { e.preventDefault(); });
+			item.addEventListener('mousedown', function (e) { toggleItem(e); });
+		});
+	</script>
+</body>
+
 </html>
