@@ -1,7 +1,8 @@
 :root {
-  --item-image-size: 2.5rem;
+  --item-image-size: 4rem;
   --item-gap:        0.5rem;
   --items-per-row:   8;
+  --text-color:      black;
 }
 
 @font-face {
@@ -32,7 +33,7 @@ body {
   flex-direction: row;
   flex-wrap: wrap;
   align-items: center;
-  justify-content: space-between;
+  justify-content: center;
   box-sizing: border-box;
   gap: var(--item-gap);
   max-width: calc((var(--items-per-row) - 1) * var(--item-gap) + var(--items-per-row) * var(--item-image-size));
@@ -40,11 +41,18 @@ body {
 
 .item {
   user-select: none;
+  flex: 0 1 var(--item-image-size);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: var(--text-color);
+  text-align: center;
+  gap: 0.5em;
 }
 
 .item img {
-  width: var(--item-image-size);
-  height: var(--item-image-size);
+  max-width: 100%;
+  max-height: 100%;
 }
 
 .item:first-child {
@@ -60,8 +68,8 @@ body {
 }
 
 #go-mode {
-  margin-left: auto;
-  margin-right: auto;
+  flex-basis: 100%;
+  margin-top: 1em;
 }
 
 .grayscale {

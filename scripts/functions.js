@@ -1,16 +1,15 @@
 function toggleItem(e) {
   e.preventDefault();
 
-  var parent = e.currentTarget;
-  var items = parent.querySelector('.items');
+  var item = e.currentTarget;
 
-  if (e.which === 1 && !items.classList.contains('locked')) items.classList.toggle('grayscale');
+  if (e.which === 1 && !item.classList.contains('locked')) item.classList.toggle('grayscale');
 
   checkGoMode();
 };
 
 function checkGoMode() {
-  var unacquiredItemNodes = document.querySelectorAll('.items.grayscale');
+  var unacquiredItemNodes = document.querySelectorAll('.item.grayscale');
   var goModeNode = document.querySelector('#go-mode');
   var unacquiredItems = [];
   let goMode = true;
