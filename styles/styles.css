@@ -11,7 +11,7 @@
   src: url('../fonts/VDL-GigaMaruJr M.ttf') format('truetype');
 }
 
-* {
+*:not(button) {
   margin: 0px;
   border: 0px;
   padding: 0px;
@@ -67,6 +67,37 @@ body {
 
 .item:not(.auto) {
   cursor: pointer;
+}
+
+#dna-counter {
+  flex-basis: 100%;
+  margin-top: 1em;
+  margin-bottom: 1em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2em;
+}
+
+#dna-counter button {
+  width: 4em;
+  height: 4em;
+}
+
+#current-dna-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5em;
+}
+
+#current-dna-wrapper img {
+  flex-basis: calc(var(--item-image-size) / 2);
+  aspect-ratio: 1;
+}
+
+#current-dna-count {
+  color: var(--text-color);
 }
 
 #go-mode {

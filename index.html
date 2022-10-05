@@ -128,7 +128,16 @@
 			<img src="images/items/pulseradar.png" alt="Pulse Radar" />
 			Pulse Radar
 		</div>
-		
+
+		<div id="dna-counter">
+			<button type="button" id="btnDecreaseDna">-</button>
+			<div id="current-dna-wrapper">
+				<img src="images/DNA.png" alt="DNA" />
+				<span id="current-dna-count">0/0</span>
+			</div>
+			<button type="button" id="btnIncreaseDna">+</button>
+		</div>
+
 		<div id="go-mode" class="auto item grayscale">
 			<img src="images/items/ship.png" alt="Go Mode" />
 			Go Mode!
@@ -138,6 +147,9 @@
 	<script type="text/javascript">
 		var params = new URLSearchParams(window.location.search);
 		var startingitems = (params.get('startingitems') || '').split(',');
+		var dnaCounter = document.querySelector('#dna-counter');
+
+		dnaRequired = +(params.get('dnacount') || '0');
 
 		for (var i = 0; i < startingitems.length; i += 1) {
 			if (startingitems[i]) {
@@ -150,7 +162,16 @@
 			}
 		}
 
+		if (dnaRequired > 0) {
+			updateDnaCounter();
+		} else {
+			dnaCounter.style.display = 'none';
+		}
+
 		document.addEventListener('wheel', function (e) { e.preventDefault(); });
+
+		document.querySelector('#btnDecreaseDna').addEventListener("click", function(e) { decreaseDna(e); })
+		document.querySelector('#btnIncreaseDna').addEventListener("click", function(e) { increaseDna(e); })
 
 		document.querySelectorAll('.item:not(.auto)').forEach(function (item) {
 			item.addEventListener('contextmenu', function (e) { e.preventDefault(); });
