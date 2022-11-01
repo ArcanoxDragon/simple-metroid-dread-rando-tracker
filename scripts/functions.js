@@ -1,6 +1,9 @@
 let dnaRequired = 0;
 let dnaAcquired = 0;
 
+let pulseAvailable = 0;
+let pulseAcquired = 0;
+
 function toggleItem(e) {
   e.preventDefault();
 
@@ -33,8 +36,29 @@ function updateDnaCounter() {
   dnaCurrent.innerHTML = `${dnaAcquired}/${dnaRequired}`;
 }
 
+function decreasePulse(e) {
+  e.preventDefault();
+
+  pulseAcquired = Math.max(0, pulseAcquired - 1);
+  updatePulseCounter();
+  checkGoMode();
+}
+
+function increasePulse(e) {
+  e.preventDefault();
+
+  pulseAcquired = Math.min(pulseAvailable, pulseAcquired + 1);
+  updatePulseCounter();
+  checkGoMode();
+}
+
+function updatePulseCounter() {
+  var pulseCurrent = document.querySelector('#current-pulse-count');
+
+  pulseCurrent.innerHTML = `${pulseAcquired}/${pulseAvailable}`;
+}
+
 function checkGoMode() {
-  var params = new URLSearchParams(window.location.search);
   var unacquiredItemNodes = document.querySelectorAll('.item.grayscale');
   var goModeNode = document.querySelector('#go-mode');
   var unacquiredItems = [];

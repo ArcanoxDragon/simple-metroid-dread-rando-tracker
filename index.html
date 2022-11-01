@@ -129,13 +129,24 @@
 			Pulse Radar
 		</div>
 
-		<div id="dna-counter">
-			<button type="button" id="btnDecreaseDna">-</button>
-			<div id="current-dna-wrapper">
-				<img src="images/DNA.png" alt="DNA" />
-				<span id="current-dna-count">0/0</span>
+		<div class="counters-container">
+			<div id="pulse-counter" class="counter-row">
+				<button type="button" id="btnDecreasePulse" class="counter-button">-</button>
+				<div id="current-pulse-wrapper" class="counter-wrapper">
+					<img src="images/items/pulseradar.png" alt="Pulse Radar" />
+					<span id="current-pulse-count">0/0</span>
+				</div>
+				<button type="button" id="btnIncreasePulse" class="counter-button">+</button>
 			</div>
-			<button type="button" id="btnIncreaseDna">+</button>
+
+			<div id="dna-counter" class="counter-row">
+				<button type="button" id="btnDecreaseDna" class="counter-button">-</button>
+				<div id="current-dna-wrapper" class="counter-wrapper">
+					<img src="images/DNA.png" alt="DNA" />
+					<span id="current-dna-count">0/0</span>
+				</div>
+				<button type="button" id="btnIncreaseDna" class="counter-button">+</button>
+			</div>
 		</div>
 
 		<div id="go-mode" class="auto item grayscale">
@@ -147,8 +158,11 @@
 	<script type="text/javascript">
 		var params = new URLSearchParams(window.location.search);
 		var startingitems = (params.get('startingitems') || '').split(',');
+		var pulseItem = document.querySelector('#pulseradar');
+		var pulseCounter = document.querySelector('#pulse-counter');
 		var dnaCounter = document.querySelector('#dna-counter');
 
+		pulseAvailable = +(params.get('pulsecount') || '0');
 		dnaRequired = +(params.get('dnacount') || '0');
 
 		for (var i = 0; i < startingitems.length; i += 1) {
@@ -168,14 +182,24 @@
 			dnaCounter.style.display = 'none';
 		}
 
-		document.addEventListener('wheel', function (e) { e.preventDefault(); });
+		if (pulseAvailable > 0) {
+			updatePulseCounter();
+			pulseItem.style.display = 'none';
+		} else {
+			pulseCounter.style.display = 'none';
+		}
 
-		document.querySelector('#btnDecreaseDna').addEventListener("click", function(e) { decreaseDna(e); })
-		document.querySelector('#btnIncreaseDna').addEventListener("click", function(e) { increaseDna(e); })
+		document.addEventListener('wheel', e => e.preventDefault());
+
+		document.querySelector('#btnDecreaseDna').addEventListener("click", e => decreaseDna(e));
+		document.querySelector('#btnIncreaseDna').addEventListener("click", e => increaseDna(e));
+
+		document.querySelector('#btnDecreasePulse').addEventListener("click", e => decreasePulse(e));
+		document.querySelector('#btnIncreasePulse').addEventListener("click", e => increasePulse(e));
 
 		document.querySelectorAll('.item:not(.auto)').forEach(function (item) {
-			item.addEventListener('contextmenu', function (e) { e.preventDefault(); });
-			item.addEventListener('mousedown', function (e) { toggleItem(e); });
+			item.addEventListener('contextmenu', e => e.preventDefault());
+			item.addEventListener('mousedown', e => toggleItem(e));
 		});
 	</script>
 </body>
